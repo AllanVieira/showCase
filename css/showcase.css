@@ -1,0 +1,41 @@
+.show-case{
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;  
+}
+
+.show-case .container{ 
+  width: 80%; 
+  border-radius: 10px;
+  overflow: overlay;
+  box-shadow: 2px 2px 5px #D5D9DC;
+}
+
+.show-case .reference{
+  float: left;
+  width: 20%;
+}
+.show-case .recommendation{
+  float: right;
+  width: 80%;
+}
+
+.show-case .header,
+.show-case .body{
+  padding: 5px; 
+}
+
+.show-case .header{  
+  background: #EFF7FE;
+  background: -webkit-linear-gradient(#EFF7FE, #E5F1FB);
+  background: -o-linear-gradient(#EFF7FE, #E5F1FB);
+  background: -moz-linear-gradient(#EFF7FE, #E5F1FB);
+  background: linear-gradient(#EFF7FE, #E5F1FB); 
+}
+.show-case .header p{
+  font-family: Arial, Verdana, "Times New Roman";
+  color: #00669F;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 5px;
+}
