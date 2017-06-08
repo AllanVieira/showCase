@@ -43,12 +43,13 @@
     //Separates the items doms with youts events
     $private.renderItems = function (showCase) {      
       var itemTemplate = showCase.dom.querySelector('.show-case .item').cloneNode(true);
-      var referenceItem = showCase.dom.querySelector('.show-case .reference .item');    
-      showCase.items = []
-      $private.writesItemData({
-        dom: referenceItem, 
+      var referenceItem = {
+        dom: showCase.dom.querySelector('.show-case .reference .item'),
         data: showCase.data.reference.item
-      })
+      };
+      showCase.items = []
+      $private.writesItemData(referenceItem)
+      $private.addItemEvents(referenceItem)
 
       for (var itemData of showCase.data.recommendation) {
         var item = {
