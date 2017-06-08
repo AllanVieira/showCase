@@ -1,41 +1,121 @@
-.show-case{
-  width: 1200px;
-  margin-left: auto;
-  margin-right: auto;  
+.show-case {
+  width: 1200px;    
+  overflow: hidden;
 }
-
 .show-case .container{ 
-  width: 80%; 
+  width: 890px; 
   border-radius: 10px;
   overflow: overlay;
   box-shadow: 2px 2px 5px #D5D9DC;
+  height: 300px;
+  position: absolute;
+  border: 1px solid #D5D9DC;  
+  pointer-events: none;
+}
+.show-case .container .body{
+  float: left;
+  height: 269px;
+  width: 92%;
 }
 
 .show-case .reference{
+  border-right: 1px solid #EEEEEE;  
+  background: white;
+  margin-top: 32px;
+  position: relative;
+}
+.show-case .reference-header,
+.show-case .reference{
   float: left;
-  width: 20%;
+  width: 190px;  
+}
+
+.show-case .recommendation-header{
+  float: right;
+  width: 700px;
 }
 .show-case .recommendation{
-  float: right;
-  width: 80%;
+  float: left;
+  width: 699px;
+  margin-top: 32px;
+}
+.show-case .recommendation .body{
+
+  width: 2200px;
+  transition: 1s;  
+}
+.show-case .recommendation .next{
+  cursor: pointer;
+  width: 8%;
+  height: 269px;  
+  position: relative;
+  left: 644px;
+  background-color: white;  
+  background: -webkit-linear-gradient(left, #EFF7FE, #E5F1FB);
+  background: -o-linear-gradient(left, #EFF7FE, #E5F1FB);
+  background: -moz-linear-gradient(left, #EFF7FE, #E5F1FB);
+  background: linear-gradient(to right, rgba(239, 247, 254, 0) -25%, #ffffff 42%);
 }
 
-.show-case .header,
-.show-case .body{
-  padding: 5px; 
-}
-
-.show-case .header{  
+.show-case .reference-header,
+.show-case .recommendation-header{  
   background: #EFF7FE;
   background: -webkit-linear-gradient(#EFF7FE, #E5F1FB);
   background: -o-linear-gradient(#EFF7FE, #E5F1FB);
   background: -moz-linear-gradient(#EFF7FE, #E5F1FB);
   background: linear-gradient(#EFF7FE, #E5F1FB); 
+  font-family: Arial, Verdana, "Times New Roman";
+  color: #00669F;
+  font-weight: bold;
+  font-size: 18px;  
 }
-.show-case .header p{
+
+.recommendation-header p {
+  margin-left: 20px;
+}
+.show-case .reference-header p,
+.show-case .recommendation-header p{
   font-family: Arial, Verdana, "Times New Roman";
   color: #00669F;
   font-weight: bold;
   font-size: 18px;
   padding: 5px;
+}
+
+.show-case .body .item{
+  margin-left: auto;
+  margin-right: auto;
+  padding: 6px;
+}
+
+.show-case .item{
+  width: 190px;
+  cursor: pointer;
+}
+.show-case .item:hover {
+  background: linear-gradient(#D7EAF9, #FFFFFF);
+}
+.show-case .item img{
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+.show-case .recommendation .item{
+  float: left;
+}
+.show-case .item .name{
+  font-size: 12px;
+}
+.show-case .item .old-price{
+  font-size: 14px;
+}
+.show-case .item .price{
+  color: #CC0000;
+}
+.show-case .item .price span{
+  font-weight: bold;
+  font-size: 19px;
+}
+.show-case .item .payment-conditions{
+  color: #CC0000;
 }
