@@ -42,7 +42,7 @@
     
     //Separates the items doms with youts events
     $private.renderItems = function (showCase) {      
-      var itemTemplate = showCase.dom.querySelector('.show-case .item').cloneNode(true);
+      var itemTemplate = showCase.dom.querySelector('.show-case .body').cloneNode(true);
       var referenceItem = {
         dom: showCase.dom.querySelector('.show-case .reference .item'),
         data: showCase.data.reference.item
@@ -53,7 +53,7 @@
 
       for (var itemData of showCase.data.recommendation) {
         var item = {
-          dom:showCase.dom.querySelector('.recommendation .body').appendChild(itemTemplate.cloneNode(true)),
+          dom:showCase.dom.querySelector('.recommendation .scroll').appendChild(itemTemplate.cloneNode(true)),
           data: itemData
         }
         showCase.items.push(item)
@@ -86,15 +86,15 @@
     }
 
     $private.nextEvent = function (showCase) {
-      showCase.body = showCase.dom.querySelector('.show-case .recommendation .body')
-      showCase.bodyWidth = showCase.body.offsetWidth
-      showCase.bodyMargin = 0
-      showCase.itemWidth = showCase.dom.querySelector('.show-case .recommendation .body .item').offsetWidth
+      showCase.scroll = showCase.dom.querySelector('.show-case .recommendation .scroll')
+      showCase.scrollWidth = showCase.scroll.offsetWidth
+      showCase.scrollMargin = 0
+      showCase.itemWidth = showCase.dom.querySelector('.show-case .recommendation .scroll .body').offsetWidth
       showCase.nextButton = showCase.dom.querySelector('.show-case .recommendation .next')
       showCase.nextButton.addEventListener('click', function (event){
-        showCase.bodyMargin += showCase.itemWidth
-        showCase.bodyMargin = showCase.bodyMargin / showCase.itemWidth <= 7 ? showCase.bodyMargin : 0
-        showCase.body.style.marginLeft = '-' + showCase.bodyMargin + 'px'        
+        showCase.scrollMargin += showCase.itemWidth
+        showCase.scrollMargin = showCase.scrollMargin / showCase.itemWidth <= 7 ? showCase.scrollMargin : 0
+        showCase.scroll.style.marginLeft = '-' + showCase.scrollMargin + 'px'        
       }.bind(showCase));
     }
 
