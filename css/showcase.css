@@ -1,5 +1,6 @@
+/*Container*/
 .show-case {
-  width: 1200px;    
+  width: 1080px;    
   overflow: hidden;
 }
 .show-case .container{ 
@@ -7,29 +8,50 @@
   border-radius: 10px;
   overflow: overlay;
   box-shadow: 2px 2px 5px #D5D9DC;
-  height: 300px;
+  height: 320px;
   position: absolute;
-  border: 1px solid #D5D9DC;  
+  border: 2px solid #D5D9DC;  
   pointer-events: none;
 }
-.show-case .container .body{
+.show-case .container .body,
+.show-case .container .scroll{
   float: left;
   height: 269px;
   width: 92%;
 }
 
-.show-case .overflow{
+.show-case .container .footer{
+  width: 100%;
+  height: 20px;
+  background: linear-gradient(rgba(239, 247, 254, 0), #E5F1FB);
   float: left;
-  width: 310px;
-  height: 269px;
-  background-color: rgba(255, 255, 255, 0.78);
+  bottom: 0;
+  position: absolute;
 }
 
+.show-case .body{
+  height: 245px;
+}
+
+/*Overflow div itens*/
+.show-case .overflow{
+  float: left;
+  width: 191px;
+  height: 320px;
+  background: linear-gradient(to right, rgba(239, 247, 254, 0.5) -25%, #ffffff 90%);
+}
+
+
+/*Reference Item*/
 .show-case .reference{
-  border-right: 1px solid #EEEEEE;  
-  background: white;
   margin-top: 32px;
   position: relative;
+}
+.show-case .reference .body{
+  padding: 6px;
+  background: white;
+  border-left: 2px solid #D5D9DC;    
+  border-right: 1px solid #D5D9DC;    
 }
 .show-case .reference-header,
 .show-case .reference{
@@ -37,6 +59,7 @@
   width: 190px;  
 }
 
+/*Recommendation items*/
 .show-case .recommendation-header{
   float: right;
   width: 700px;
@@ -46,24 +69,48 @@
   width: 699px;
   margin-top: 32px;
 }
-.show-case .recommendation .body{
-
+.show-case .recommendation .scroll{
   width: 2200px;
   transition: 1s;  
+  padding-left: 30px;
 }
 .show-case .recommendation .next{
   cursor: pointer;
   width: 8%;
   height: 269px;  
   position: relative;
-  left: 644px;
+  left: 646px;  
   background-color: white;  
   background: -webkit-linear-gradient(left, #EFF7FE, #E5F1FB);
   background: -o-linear-gradient(left, #EFF7FE, #E5F1FB);
   background: -moz-linear-gradient(left, #EFF7FE, #E5F1FB);
   background: linear-gradient(to right, rgba(239, 247, 254, 0) -25%, #ffffff 42%);
 }
+.show-case .recommendation .prev{
+  cursor: pointer;
+  width: 40px;
+  height: 269px;
+  position: absolute; 
+  background-color: white;  
+  float: left;
+}
+.show-case .recommendation .next img{
+  position: relative;
+  top: -70%;
+  right: -25px;
+}
+.show-case .recommendation .prev img{
+  position: relative;
+  top: 30%;
+  right: -10px; 
+}
+.show-case .recommendation .body{
+  float: left;
+  padding: 6px;
+  width: 170px;
+}
 
+/*Headers*/
 .show-case .reference-header,
 .show-case .recommendation-header{  
   background: #EFF7FE;
@@ -76,7 +123,6 @@
   font-weight: bold;
   font-size: 18px;  
 }
-
 .recommendation-header p {
   margin-left: 20px;
 }
@@ -89,32 +135,33 @@
   padding: 5px;
 }
 
-.show-case .body .item{
-  margin-left: auto;
-  margin-right: auto;
-  padding: 6px;
+/*Items style*/
+.show-case .body:hover{
+  background: linear-gradient(#D7EAF9, #FFFFFF);
+}
+.show-case .body:hover img{
+  border: 2px solid #D5D9DC;
 }
 
 .show-case .item{
-  width: 190px;
+  width: 135px;
   cursor: pointer;
 }
-.show-case .item:hover {
-  background: linear-gradient(#D7EAF9, #FFFFFF);
+.show-case .body .item{
+  margin-left: auto;
+  margin-right: auto;    
 }
 .show-case .item img{
   margin-left: auto;
   margin-right: auto;
   display: block;
 }
-.show-case .recommendation .item{
-  float: left;
-}
 .show-case .item .name{
   font-size: 12px;
+  margin-bottom: 10px;
 }
 .show-case .item .old-price{
-  font-size: 14px;
+  font-size: 12px;
 }
 .show-case .item .price{
   color: #CC0000;
