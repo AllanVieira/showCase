@@ -82,20 +82,31 @@
     }
 
     $private.addEvents = function (showCase) {      
-      $private.nextEvent(showCase);
+      $private.transitionEvent(showCase);
     }
 
-    $private.nextEvent = function (showCase) {
-      showCase.scroll = showCase.dom.querySelector('.show-case .recommendation .scroll')
-      showCase.scrollWidth = showCase.scroll.offsetWidth
+    $private.transitionEvent = function (showCase) {
+      showCase.scroll = showCase.dom.querySelector('.show-case .recommendation .scroll')      
+      showCase.containerWidth = showCase.dom.querySelector('.show-case .recommendation').offsetWidth
       showCase.scrollMargin = 0
+      showCase.items = showCase.dom.querySelectorAll('.show-case .recommendation .scroll .body').length
       showCase.itemWidth = showCase.dom.querySelector('.show-case .recommendation .scroll .body').offsetWidth
+      showCase.itemsVisible = Math.floor(showCase.containerWidth / showCase.itemWidth)
+      showCase.maxNext = showCase.items - showCase.itemsVisible
       showCase.nextButton = showCase.dom.querySelector('.show-case .recommendation .next')
-      showCase.nextButton.addEventListener('click', function (event){
+      showCase.prevButton = showCase.dom.querySelector('.show-case .recommendation .prev')
+      showCase.nextEvent = function () {
         showCase.scrollMargin += showCase.itemWidth
-        showCase.scrollMargin = showCase.scrollMargin / showCase.itemWidth <= 7 ? showCase.scrollMargin : 0
+        showCase.scrollMargin = showCase.scrollMargin / showCase.itemWidth <= showCase.maxNext ? showCase.scrollMargin : 0
+        showCase.scroll.style.marginLeft = '-' + showCase.scrollMargin + 'px'
+      }
+      showCase.prevEvent = function () {
+        showCase.scrollMargin -= showCase.itemWidth
+        showCase.scrollMargin = showCase.scrollMargin < 0 ? showCase.itemWidth * showCase.maxNext : showCase.scrollMargin
         showCase.scroll.style.marginLeft = '-' + showCase.scrollMargin + 'px'        
-      }.bind(showCase));
+      }
+      showCase.nextButton.addEventListener('click', function() {showCase.nextEvent()}.bind(showCase));
+      showCase.prevButton.addEventListener('click', function () {showCase.prevEvent()}.bind(showCase));
     }
 
     return $public;

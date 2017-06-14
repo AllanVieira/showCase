@@ -1,6 +1,6 @@
 /*Container*/
 .show-case {
-  width: 1200px;    
+  width: 1080px;    
   overflow: hidden;
 }
 .show-case .container{ 
@@ -36,9 +36,9 @@
 /*Overflow div itens*/
 .show-case .overflow{
   float: left;
-  width: 311px;
+  width: 191px;
   height: 320px;
-  background-color: rgba(255, 255, 255, 0.78);
+  background: linear-gradient(to right, rgba(239, 247, 254, 0.5) -25%, #ffffff 90%);
 }
 
 
@@ -72,18 +72,37 @@
 .show-case .recommendation .scroll{
   width: 2200px;
   transition: 1s;  
+  padding-left: 30px;
 }
 .show-case .recommendation .next{
   cursor: pointer;
   width: 8%;
   height: 269px;  
   position: relative;
-  left: 644px;
+  left: 646px;  
   background-color: white;  
   background: -webkit-linear-gradient(left, #EFF7FE, #E5F1FB);
   background: -o-linear-gradient(left, #EFF7FE, #E5F1FB);
   background: -moz-linear-gradient(left, #EFF7FE, #E5F1FB);
   background: linear-gradient(to right, rgba(239, 247, 254, 0) -25%, #ffffff 42%);
+}
+.show-case .recommendation .prev{
+  cursor: pointer;
+  width: 40px;
+  height: 269px;
+  position: absolute; 
+  background-color: white;  
+  float: left;
+}
+.show-case .recommendation .next img{
+  position: relative;
+  top: -70%;
+  right: -25px;
+}
+.show-case .recommendation .prev img{
+  position: relative;
+  top: 30%;
+  right: -10px; 
 }
 .show-case .recommendation .body{
   float: left;
