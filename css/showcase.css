@@ -137,15 +137,14 @@
 .show-case .item .old-price{
   font-size: 12px;
 }
-.show-case .item .price{
+.show-case .item .price,
+.show-case .item .payment-conditions{
   color: #CC0000;
+  font-size: 13px;
 }
 .show-case .item .price span{
   font-weight: bold;
-  font-size: 19px;
-}
-.show-case .item .payment-conditions{
-  color: #CC0000;
+  font-size: 17px;
 }
 
 
