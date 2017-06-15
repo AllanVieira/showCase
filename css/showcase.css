@@ -1,46 +1,32 @@
 /*Container*/
-.show-case {
-  width: 1080px;    
+.show-case {  
   overflow: hidden;
 }
-.show-case .container{ 
-  width: 890px; 
+.show-case .container{   
   border-radius: 10px;
   overflow: overlay;
-  box-shadow: 2px 2px 5px #D5D9DC;
-  height: 320px;
+  box-shadow: 2px 2px 5px #D5D9DC;  
   position: absolute;
   border: 2px solid #D5D9DC;  
   pointer-events: none;
 }
 .show-case .container .body,
-.show-case .container .scroll{
-  float: left;
-  height: 269px;
-  width: 92%;
+.show-case .container .scroll{  
+  float: left;  
 }
 
-.show-case .container .footer{
-  width: 100%;
-  height: 20px;
+.show-case .container .footer{  
   background: linear-gradient(rgba(239, 247, 254, 0), #E5F1FB);
   float: left;
   bottom: 0;
   position: absolute;
 }
 
-.show-case .body{
-  height: 245px;
-}
-
 /*Overflow div itens*/
-.show-case .overflow{
-  float: left;
-  width: 191px;
-  height: 320px;
+.show-case .overflow{  
+  float: left;  
   background: linear-gradient(to right, rgba(239, 247, 254, 0.5) -25%, #ffffff 90%);
 }
-
 
 /*Reference Item*/
 .show-case .reference{
@@ -54,60 +40,49 @@
   border-right: 1px solid #D5D9DC;    
 }
 .show-case .reference-header,
-.show-case .reference{
-  float: left;
-  width: 190px;  
+.show-case .reference{  
+  float: left;  
 }
 
 /*Recommendation items*/
-.show-case .recommendation-header{
-  float: right;
-  width: 700px;
+.show-case .recommendation-header{  
+  float: right;  
 }
-.show-case .recommendation{
-  float: left;
-  width: 699px;
+.show-case .recommendation{  
+  float: left;  
   margin-top: 32px;
 }
-.show-case .recommendation .scroll{
-  width: 2200px;
+.show-case .recommendation .scroll{  
   transition: 1s;  
   padding-left: 30px;
 }
-.show-case .recommendation .next{
+.show-case .recommendation .next{    
   cursor: pointer;
   width: 8%;
-  height: 269px;  
+  height: 269px;
   position: relative;
-  left: 646px;  
-  background-color: white;  
+  left: 646px;
+  background-color: white;
   background: -webkit-linear-gradient(left, #EFF7FE, #E5F1FB);
   background: -o-linear-gradient(left, #EFF7FE, #E5F1FB);
   background: -moz-linear-gradient(left, #EFF7FE, #E5F1FB);
   background: linear-gradient(to right, rgba(239, 247, 254, 0) -25%, #ffffff 42%);
 }
-.show-case .recommendation .prev{
-  cursor: pointer;
-  width: 40px;
-  height: 269px;
+.show-case .recommendation .prev{  
+  cursor: pointer;  
   position: absolute; 
   background-color: white;  
   float: left;
 }
-.show-case .recommendation .next img{
-  position: relative;
-  top: -70%;
-  right: -25px;
+.show-case .recommendation .next img{  
+  position: relative;  
 }
 .show-case .recommendation .prev img{
-  position: relative;
-  top: 30%;
-  right: -10px; 
+  position: relative;  
 }
-.show-case .recommendation .body{
+.show-case .recommendation .body{  
   float: left;
   padding: 6px;
-  width: 170px;
 }
 
 /*Headers*/
@@ -143,8 +118,7 @@
   border: 2px solid #D5D9DC;
 }
 
-.show-case .item{
-  width: 135px;
+.show-case .item{  
   cursor: pointer;
 }
 .show-case .body .item{
@@ -173,3 +147,356 @@
 .show-case .item .payment-conditions{
   color: #CC0000;
 }
+
+
+/*Adjust Responsive layout*/
+@media (max-width: 599px) {
+  .show-case .item .name {
+    padding-top: 15px;
+  }
+  .show-case .reference .body {
+    border-right: none;
+  }
+  .show-case .reference .item {
+    margin: 0px;
+    width: 100%;
+  }
+  .show-case .reference .item img{
+    float: left;
+    margin-right: 5px;
+  }
+  .show-case {
+    width: 375px;    
+  }
+  .show-case .container{ 
+    width: 375px; 
+    height: 480px;
+  }
+  .show-case .container .body,
+  .show-case .container .scroll{
+    height: 269px;
+    width: 92%;
+  }
+  .show-case .container .footer{
+    width: 100%;
+    height: 20px;
+  }
+  .show-case .body{
+    height: auto;
+  }
+  .show-case .overflow{
+    width: 72px;
+    height: 320px;
+    margin-left: auto;
+  }
+  .show-case .reference {
+    height: 130px;
+  }
+  .show-case .reference-header,
+  .show-case .reference{
+    width: 100%;
+  }
+  .show-case .recommendation-header{
+    margin-top: 172px;
+    float: inherit;
+    width: 100%;
+  }
+  .show-case .recommendation{
+    width: 100%;
+  }
+  .show-case .recommendation .scroll{
+    width: 2200px;
+  }
+  .show-case .recommendation .next{
+    height: 261px;
+    left: 335px;
+    margin-top: 11px;
+  }
+  .show-case .recommendation .prev{
+    width: 30px;
+    height: 261px;
+    margin-top: 11px;
+    margin-left: 2px;
+  }
+  .show-case .recommendation .next{  
+    width: 40px;  
+  }
+  .show-case .recommendation .next img{
+    top: -170px;
+    right: -10px;
+  }
+  .show-case .recommendation .prev img{
+    top: 30%;
+    right: -3px; 
+  }
+  .show-case .recommendation .body{
+    width: 150px;
+  }
+  .show-case .item{
+    width: 135px;
+  }
+}
+
+
+@media (min-width: 600px) {
+  .show-case {
+    width: 525px;    
+  }
+  .show-case .container{ 
+    width: 450px; 
+    height: 320px;
+  }
+  .show-case .container .body,
+  .show-case .container .scroll{
+    height: 269px;
+    width: 92%;
+  }
+  .show-case .container .footer{
+    width: 100%;
+    height: 20px;
+  }
+  .show-case .body{
+    height: 245px;
+  }
+  .show-case .overflow{
+    width: 72px;
+    height: 320px;
+    margin-left: auto;
+  }
+  .show-case .reference-header,
+  .show-case .reference{
+    width: 150px;      
+  }
+  .show-case .recommendation-header{
+    width: 300px;
+  }
+  .show-case .recommendation{
+    width: 303px;
+  }
+  .show-case .recommendation .scroll{
+    width: 2200px;
+  }
+  .show-case .recommendation .next{
+    height: 269px;  
+    left: 263px;  
+  }
+  .show-case .recommendation .prev{
+    width: 40px;
+    height: 269px;
+  }
+  .show-case .recommendation .next{  
+    width: 40px;  
+  }
+  .show-case .recommendation .next img{
+    top: -170px;
+    right: -10px;
+  }
+  .show-case .recommendation .prev img{
+    top: 30%;
+    right: -10px; 
+  }
+  .show-case .recommendation .body{
+    width: 150px;
+  }
+  .show-case .item{
+    width: 135px;
+  }
+}
+
+@media (min-width: 700px) {
+  .show-case {
+    width: 850px;    
+  }
+  .show-case .container{ 
+    width: 660px; 
+    height: 320px;
+  }
+  .show-case .container .body,
+  .show-case .container .scroll{
+    height: 269px;
+    width: 92%;
+  }
+  .show-case .container .footer{
+    width: 100%;
+    height: 20px;
+  }
+  .show-case .body{
+    height: 245px;
+  }
+  .show-case .overflow{
+    width: 187px;
+    height: 320px;
+    margin-left: 103px;
+  }
+  .show-case .reference-header,
+  .show-case .reference{
+    width: 150px;      
+  }
+  .show-case .recommendation-header{
+    width: 510px;
+  }
+  .show-case .recommendation{
+    width: 410px;
+  }
+  .show-case .recommendation .scroll{
+    width: 2200px;
+  }
+  .show-case .recommendation .next{
+    height: 269px;  
+    left: 470px;  
+  }
+  .show-case .recommendation .prev{
+    width: 40px;
+    height: 269px;
+  }
+  .show-case .recommendation .next{  
+    width: 40px;  
+  }
+  .show-case .recommendation .next img{
+    top: -170px;
+    right: -10px;
+  }
+  .show-case .recommendation .prev img{
+    top: 30%;
+    right: -10px; 
+  }
+  .show-case .recommendation .body{
+    width: 150px;
+  }
+  .show-case .item{
+    width: 135px;
+  }
+}
+
+@media (min-width: 900px) {
+  .show-case {
+    width: 850px;    
+  }
+  .show-case .container{ 
+    width: 660px; 
+    height: 320px;
+  }
+  .show-case .container .body,
+  .show-case .container .scroll{
+    height: 269px;
+    width: 92%;
+  }
+  .show-case .container .footer{
+    width: 100%;
+    height: 20px;
+  }
+  .show-case .body{
+    height: 245px;
+  }
+  .show-case .overflow{
+    width: 190px;
+    height: 320px;
+    margin-left: auto;
+  }
+  .show-case .reference-header,
+  .show-case .reference{
+    width: 190px;      
+  }
+  .show-case .recommendation-header{
+    width: 470px;
+  }
+  .show-case .recommendation{
+    width: 470px;
+  }
+  .show-case .recommendation .scroll{
+    width: 2200px;
+  }
+  .show-case .recommendation .next{
+    height: 269px;  
+    left: 434px;  
+  }
+  .show-case .recommendation .prev{
+    width: 40px;
+    height: 269px;
+  }
+  .show-case .recommendation .next{  
+    width: 8%;  
+  }
+  .show-case .recommendation .next img{
+    top: -170px;
+    right: -15px;
+  }
+  .show-case .recommendation .prev img{
+    top: 30%;
+    right: -10px; 
+  }
+  .show-case .recommendation .body{
+    width: 170px;
+  }
+  .show-case .item{
+    width: 135px;
+  }
+}
+
+
+@media (min-width: 1100px) {
+  .show-case {
+    width: 1080px;    
+  }
+  .show-case .container{ 
+    width: 890px; 
+    height: 320px;
+  }
+  .show-case .container .body,
+  .show-case .container .scroll{
+    height: 269px;
+    width: 92%;
+  }
+  .show-case .container .footer{
+    width: 100%;
+    height: 20px;
+  }
+  .show-case .body{
+    height: 245px;
+  }
+  .show-case .overflow{
+    width: 191px;
+    height: 320px;
+    margin-left: auto;
+  }
+  .show-case .reference-header,
+  .show-case .reference{
+    width: 190px;      
+  }
+  .show-case .recommendation-header{
+    width: 700px;
+  }
+  .show-case .recommendation{
+    width: 699px;
+  }
+  .show-case .recommendation .scroll{
+    width: 2200px;
+  }
+  .show-case .recommendation .next{
+    height: 269px;  
+    left: 646px;  
+
+  }
+  .show-case .recommendation .prev{
+    width: 40px;
+    height: 269px;
+  }
+  .show-case .recommendation .next{  
+    width: 8%;  
+  }
+  .show-case .recommendation .next img{
+    top: -170px;s
+    right: -25px;
+  }
+  .show-case .recommendation .prev img{
+    top: 30%;
+    right: -10px; 
+  }
+  .show-case .recommendation .body{
+    width: 170px;
+  }
+  .show-case .item{
+    width: 135px;
+  }
+}
+

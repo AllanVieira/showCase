@@ -87,20 +87,31 @@
 
     $private.transitionEvent = function (showCase) {
       showCase.scroll = showCase.dom.querySelector('.show-case .recommendation .scroll')      
-      showCase.containerWidth = showCase.dom.querySelector('.show-case .recommendation').offsetWidth
-      showCase.scrollMargin = 0
-      showCase.items = showCase.dom.querySelectorAll('.show-case .recommendation .scroll .body').length
-      showCase.itemWidth = showCase.dom.querySelector('.show-case .recommendation .scroll .body').offsetWidth
-      showCase.itemsVisible = Math.floor(showCase.containerWidth / showCase.itemWidth)
-      showCase.maxNext = showCase.items - showCase.itemsVisible
       showCase.nextButton = showCase.dom.querySelector('.show-case .recommendation .next')
       showCase.prevButton = showCase.dom.querySelector('.show-case .recommendation .prev')
+      showCase.containerWidth = showCase.dom.querySelector('.show-case .recommendation').offsetWidth
+      showCase.items = showCase.dom.querySelectorAll('.show-case .recommendation .scroll .body').length
+      showCase.itemWidth = showCase.dom.querySelector('.show-case .recommendation .scroll .body').offsetWidth
+      showCase.resetScroll = function () {
+        showCase.scrollMargin = 0
+        showCase.itemsVisible = Math.floor(showCase.containerWidth / showCase.itemWidth)
+        showCase.maxNext = showCase.items - showCase.itemsVisible
+      }
+      showCase.resetScroll()
+      showCase.checkWidthItems = function () {
+        showCase.itemWidth = showCase.dom.querySelector('.show-case .recommendation .scroll .body').offsetWidth
+        if (showCase.scrollMargin % showCase.itemWidth > 0) {
+          showCase.resetScroll()
+        }
+      }
       showCase.nextEvent = function () {
+        showCase.checkWidthItems()
         showCase.scrollMargin += showCase.itemWidth
         showCase.scrollMargin = showCase.scrollMargin / showCase.itemWidth <= showCase.maxNext ? showCase.scrollMargin : 0
         showCase.scroll.style.marginLeft = '-' + showCase.scrollMargin + 'px'
       }
       showCase.prevEvent = function () {
+        showCase.checkWidthItems()
         showCase.scrollMargin -= showCase.itemWidth
         showCase.scrollMargin = showCase.scrollMargin < 0 ? showCase.itemWidth * showCase.maxNext : showCase.scrollMargin
         showCase.scroll.style.marginLeft = '-' + showCase.scrollMargin + 'px'        
