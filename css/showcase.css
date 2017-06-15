@@ -170,7 +170,7 @@
   }
   .show-case .container{ 
     width: 375px; 
-    height: 480px;
+    height: 525px;
   }
   .show-case .container .body,
   .show-case .container .scroll{
@@ -197,12 +197,13 @@
     width: 100%;
   }
   .show-case .recommendation-header{
-    margin-top: 172px;
+    margin-top: 187px;
     float: inherit;
     width: 100%;
   }
   .show-case .recommendation{
     width: 100%;
+    margin-top: 57px;
   }
   .show-case .recommendation .scroll{
     width: 2200px;
@@ -210,12 +211,12 @@
   .show-case .recommendation .next{
     height: 261px;
     left: 335px;
-    margin-top: 11px;
+    margin-top: 26px;
   }
   .show-case .recommendation .prev{
     width: 30px;
     height: 261px;
-    margin-top: 11px;
+    margin-top: 26px;
     margin-left: 2px;
   }
   .show-case .recommendation .next{  
@@ -226,7 +227,7 @@
     right: -10px;
   }
   .show-case .recommendation .prev img{
-    top: 30%;
+    top: 85PX;
     right: -3px; 
   }
   .show-case .recommendation .body{
